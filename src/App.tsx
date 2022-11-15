@@ -13,7 +13,7 @@ function App() {
           <h1>Bem vindo!</h1>
           <form action="">
             <input type="text" placeholder="Username" />
-            <input type="text" placeholder="*" />
+            <input type="text" placeholder="*" /> 
             <div>
               <input type="checkbox" name="" id="" />
               <label htmlFor="">Remenber</label>
