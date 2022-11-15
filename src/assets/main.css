@@ -17,6 +17,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 5rem 0 1rem;
+    position: relative;
 }
 
 .container__content {
@@ -71,7 +73,8 @@ body {
     font-size: .8rem;
 }
 
-.container__content__login form input[type="text"] {
+.container__content__login form input[type="text"],
+.container__content__login form input[type="password"] {
     max-width: 300px;
     height: 50px;
     border: none;
@@ -80,7 +83,8 @@ body {
     outline: 0;
 }
 
-.container__content__login form input[type="text"]::placeholder {
+.container__content__login form input[type="text"]::placeholder,
+    .container__content__login form input[type="password"]::placeholder {
     text-transform: uppercase;
     text-align: center;
     font-weight: 700;
@@ -97,28 +101,8 @@ body {
     font-size: .8rem;
 }
 
-.container__content__login form div input[type="checkbox"] {
-    all: unset;
-    display: block;
-    border: solid 2px #3E3E3E;
-    width: 12px;
-    height: 12px;
-    background: transparent;
+.container__content__login form div {
     cursor: pointer;
-}
-
-.container__content__login form div input[type="checkbox"]:checked {
-    background: #3E3E3E;
-}
-
-.container__content__login form div span:nth-child(3) {
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-.container__content__login form div a:nth-child(3):visited {
-    color: currentColor;
 }
 
 .container__content__login form input[type="submit"] {
@@ -150,9 +134,22 @@ body {
     box-sizing: border-box;
 }
 
+.final_password {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: white;
+    font-size: .8rem;
+}
+
+.final_password span {
+    font-weight: bold;
+}
+
 @media(min-width: 767px) {
     .container {
         height: 100vh;
+        padding: 0;
     }
 
     .container__content {
@@ -162,9 +159,11 @@ body {
 
     .container__content__login {
         width: 45%;
+        height: 450px;
     }
-
+    
     .container__content__login_img {
         width: 55%;
+        height: 545px;
     }
 }
