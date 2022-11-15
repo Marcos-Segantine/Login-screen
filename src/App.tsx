@@ -1,10 +1,29 @@
 import { useState } from "react";
 
 import "./assets/main.css";
-import safetyImg from './assets/safety-img.png'
+import safetyImg from "./assets/safety-img.png";
+
+import { emailPassword } from "./loginEmailPassword";
+
+import { ForgotPassword } from "./ForgotPassword";
+
+interface ILoginData {
+  email: string;
+  password: string;
+}
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [email, setEmai] = useState("");
+  const [password, setPassword] = useState("");
+  const [forgotPassword, setForgotPassword] = useState(false);
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    emailPassword.forEach((value) => {
+      if (value.email === email && value.password === password)
+        console.log("BATEUU EMAIL");
+    });
+  };
 
   return (
     <div className="container">
@@ -12,22 +31,41 @@ function App() {
         <div className="container__content__login">
           <h1>Bem vindo!</h1>
           <form action="">
-            <input type="text" placeholder="Username" />
-            <input type="text" placeholder="*" /> 
+            <input
+              type="text"
+              placeholder="Username"
+              onChange={(e) => setEmai(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="*"
+              onChange={(e) => setPassword(e.target.value)}
+            />
             <div>
               <input type="checkbox" name="" id="" />
               <label htmlFor="">Remenber</label>
-             <a href="">Forgot password?</a>
+              <span onClick={() => setForgotPassword(!forgotPassword)}>
+                Forgot password?
+              </span>
             </div>
-            <input type="submit" />
+            <input type="submit" onClick={handleSubmit} />
           </form>
         </div>
 
         <div className="container__content__login_img">
-            <h2>navegue com segurança..</h2>
-            <img src={safetyImg} alt="" />
+          <h2>Navegue com segurança..</h2>
+          <img src={safetyImg} alt="" />
         </div>
       </div>
+
+      {forgotPassword ? (
+        <ForgotPassword
+          forgotPassword={forgotPassword}
+          setForgotPassword={setForgotPassword}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 }

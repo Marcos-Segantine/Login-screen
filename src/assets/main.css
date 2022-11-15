@@ -96,13 +96,11 @@ body {
     background: #3E3E3E;
 }
 
-.container__content__login form div a:nth-child(3) {
+.container__content__login form div span:nth-child(3) {
     position: absolute;
     top: 0;
     right: 0;
-    text-decoration: none;
 }
-
 
 .container__content__login form div a:nth-child(3):visited {
     color: currentColor;
