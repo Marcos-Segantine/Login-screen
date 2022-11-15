@@ -4,13 +4,7 @@ import "./assets/main.css";
 import safetyImg from "./assets/safety-img.png";
 
 import { emailPassword } from "./loginEmailPassword";
-
 import { ForgotPassword } from "./ForgotPassword";
-
-interface ILoginData {
-  email: string;
-  password: string;
-}
 
 function App() {
   const [email, setEmai] = useState("");
