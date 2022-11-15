@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 import "./assets/main.css";
 import safetyImg from "./assets/safety-img.png";
@@ -16,12 +16,20 @@ function App() {
   const [email, setEmai] = useState("");
   const [password, setPassword] = useState("");
   const [forgotPassword, setForgotPassword] = useState(false);
+  const [loginValid, setLoginValid] = useState(false);
+  const [messageLoginValid, setMessageLoginValid] = useState("");
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.TouchEvent) => {
     e.preventDefault();
     emailPassword.forEach((value) => {
-      if (value.email === email && value.password === password)
-        console.log("BATEUU EMAIL");
+      if (value.email === email && value.password === password) {
+        setMessageLoginValid("Email e senha corretos!");
+        setLoginValid(true);
+        return;
+      } else {
+        setMessageLoginValid("Email e/ou senha invalidos!");
+        setLoginValid(false);
+      }
     });
   };
 
@@ -31,6 +39,13 @@ function App() {
         <div className="container__content__login">
           <h1>Bem vindo!</h1>
           <form action="">
+            <p
+              className={
+                loginValid ? "valid_login_message" : "invalid_login_message"
+              }
+            >
+              {messageLoginValid}
+            </p>
             <input
               type="text"
               placeholder="Username"

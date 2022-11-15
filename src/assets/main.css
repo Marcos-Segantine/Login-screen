@@ -2,6 +2,7 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 :root {
@@ -12,7 +13,7 @@ body {
 
 .container {
     background-color: var(--bg-color);
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +34,7 @@ body {
     width: 90%;
     height: 500px;
     display: flex;
-    gap: 100px;
+    gap: 50px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -50,10 +51,24 @@ body {
 
 .container__content__login form {
     width: 70%;
+    height: 290px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-end;
     gap: 22px;
+}
+
+.valid_login_message {
+    color: #228B22;
+    font-weight: bold;
+    font-size: .8rem;
+}
+
+.invalid_login_message {
+    color: #CD3700;
+    font-weight: bold;
+    font-size: .8rem;
 }
 
 .container__content__login form input[type="text"] {
