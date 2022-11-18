@@ -1,5 +1,5 @@
 import React, { SetStateAction } from "react";
-import "./assets/ForgotPassword.css";
+import "./assets/css/ForgotPassword.css";
 
 interface IState {
   forgotPassword: boolean;

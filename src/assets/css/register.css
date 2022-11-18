@@ -1,0 +1,81 @@
+.container__content__register {
+    background: rgb(2, 179, 249);
+    background: linear-gradient(185deg, rgba(2, 179, 249, 1) 0%, rgba(0, 127, 240, 1) 100%);
+    width: 90%;
+    height: 50px;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 0;
+    position: relative;
+}
+
+.container__content__register h1 {
+    color: white;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 36px;
+}
+
+.container__content__register form {
+    width: 70%;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+}
+
+.container__content__register form label {
+    color: white;
+}
+
+.container__content__register form input[type="text"],
+.container__content__register form input[type="password"] {
+    max-width: 300px;
+    height: 100px;
+    border: none;
+    border-radius: 30px;
+    padding: 0 2rem;
+    outline: 0;
+}
+
+.container__content__register form input[type="text"]::placeholder,
+.container__content__register form input[type="password"]::placeholder {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+}
+
+.inputSubmit {
+    background-color: var(--green);
+    border: solid .5px black;
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: .5rem 2rem;
+    color: white;
+    text-transform: uppercase;
+    width: 80%;
+    max-width: 200px;
+    text-align: center;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.login_screen {
+    color: var(--gray);
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    right: 15px;
+}
+
+@media(min-width: 767px) {
+    .container__content__register {
+        width: 45%;
+        height: 450px;
+    }
+}

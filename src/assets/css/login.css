@@ -1,35 +1,3 @@
-*,
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-:root {
-    --bg-color: #005097;
-    --green: #11CC97;
-    --gray: #3E3E3E;
-}
-
-.container {
-    background-color: var(--bg-color);
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5rem 0 1rem;
-    position: relative;
-}
-
-.container__content {
-    width: 1000px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 15px;
-    overflow: hidden;
-}
-
 .container__content__login {
     background: rgb(2, 179, 249);
     background: linear-gradient(185deg, rgba(2, 179, 249, 1) 0%, rgba(0, 127, 240, 1) 100%);
@@ -84,7 +52,7 @@ body {
 }
 
 .container__content__login form input[type="text"]::placeholder,
-    .container__content__login form input[type="password"]::placeholder {
+.container__content__login form input[type="password"]::placeholder {
     text-transform: uppercase;
     text-align: center;
     font-weight: 700;
@@ -93,15 +61,13 @@ body {
 .container__content__login form div {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 5px;
     width: 100%;
     max-width: 200px;
     position: relative;
     color: var(--gray);
     font-size: .8rem;
-}
-
-.container__content__login form div {
     cursor: pointer;
 }
 
@@ -134,34 +100,12 @@ body {
     box-sizing: border-box;
 }
 
-.final_password {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    color: white;
-    font-size: .8rem;
-}
-
-.final_password span {
-    font-weight: bold;
-}
-
 @media(min-width: 767px) {
-    .container {
-        height: 100vh;
-        padding: 0;
-    }
-
-    .container__content {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
     .container__content__login {
         width: 45%;
         height: 450px;
     }
-    
+
     .container__content__login_img {
         width: 55%;
         height: 545px;
