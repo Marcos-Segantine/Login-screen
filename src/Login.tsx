@@ -24,6 +24,7 @@ export const Login = ({ forgotPassword, setForgotPassword, loginScreen, setLogin
     });
   };
 
+
   return (
     <div className="container__content__login">
       <h1>Bem vindo!</h1>
@@ -37,7 +38,7 @@ export const Login = ({ forgotPassword, setForgotPassword, loginScreen, setLogin
         </p>
         <input
           type="text"
-          placeholder="Username"
+          placeholder="Email/Usuário"
           onChange={(e) => setEmai(e.target.value)}
         />
         <input
@@ -47,9 +48,9 @@ export const Login = ({ forgotPassword, setForgotPassword, loginScreen, setLogin
         />
         <div>
           <span onClick={() => setForgotPassword(!forgotPassword)}>
-            Forgot password?
+            Esqueceu a senha?
           </span>
-          <span onClick={() => setLoginScreen(!loginScreen)}>Cadastrar</span>
+          <span onClick={() => {setLoginScreen(!loginScreen); setForgotPassword(false)}}>Cadastrar</span>
         </div>
         <input type="submit" onClick={handleSubmit} />
       </form>

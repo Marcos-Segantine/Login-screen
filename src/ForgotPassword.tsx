@@ -1,5 +1,8 @@
 import React, { SetStateAction } from "react";
+
 import "./assets/css/ForgotPassword.css";
+
+import { emailPassword } from "./loginEmailPassword";
 
 interface IState {
   forgotPassword: boolean;
@@ -18,12 +21,19 @@ export const ForgotPassword = ({
       >
         X
       </span>
-      <p>
-        <span>Email:</span> &quot;email@teste.com&quot;
-      </p>
-      <p>
-        <span>Password:</span> &quot;123456&quot;
-      </p>
+
+      {emailPassword.map((value, index) => {
+        return (
+          <div className="content_email_pasword" key={index}>
+            <p>
+              <span>Email:</span> &quot;{value.email}&quot;
+            </p>
+            <p>
+              <span>Password:</span> &quot;{value.password}&quot;
+            </p>
+          </div>
+        );
+      })}
     </div>
   );
 };

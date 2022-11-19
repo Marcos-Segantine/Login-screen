@@ -8,7 +8,7 @@ import { Login } from "./Login";
 import { Register } from "./Register";
 
 function App() {
-  const [loginScreen, setLoginScreen] = useState(false);
+  const [loginScreen, setLoginScreen] = useState(true);
   const [forgotPassword, setForgotPassword] = useState(false);
 
   return (
